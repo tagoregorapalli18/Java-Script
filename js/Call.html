@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>CALL_APPLY_BIND</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	</head>
+	
+	<body>
+	
+	<script>
+	//call()
+	const user1={firstname:'viswa',lastname:'arabati',};
+	function disp(x,y){
+		console.log(`${this.firstname},${x},${this.lastname},${y}`);
+		}
+	disp.call(user1,'mrs' ,'mr');
+	
+	//apply()
+	const user2={firstname:'viswa',lastname:'arabati',};
+	const cars=['bmw','rr','audi'];
+	function disp(car1,car2,car3){
+		console.log(`${this.firstname},${this.lastname} wants to buy ${car1},${car2},${car3}`);
+		}
+	disp.apply(user2,cars);
+	
+	//bind()
+	//apply()
+	
+	function disp(car1,car2,car3){
+		console.log(`${this} wants to buy ${car1},${car2},${car3}`);
+		}
+	const newcars=disp.bind('mycars','bmw','rr','audi');
+	console.log(newcars());
+	</script>
+	</body>
+</html>
